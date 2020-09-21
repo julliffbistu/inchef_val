@@ -1,0 +1,28 @@
+[
+  {
+    "name":"description",
+    "version": "v1.1.19",
+    "date":"2020.08.21",
+    "defaultmode":"business",
+    "user":"normal",
+    "comments":"defaultmode:teach/business, user:normal/admin"
+  },
+  {
+    "name":"application",
+    "comments":"socket port and address config, loglevel:[debug info notice warn error fatal]",
+    "proxy":[
+      {"name":"proxy", "ip":"192.168.1.102"}
+    ],
+    "algorithms":[
+      {"name":"roscore", "socket":"roscore", "srcPath": "-", "bin":"roscore", "args":"", "loglevel":"info"},
+      {"name":"kinect2_bridge", "socket":"kinect2_bridge", "srcPath": "-", "bin":"roslaunch kinect2_bridge kinect2_bridge.launch sensor:=019596552647", "args":"", "loglevel":"info"},
+      {"name":"ros_mask", "socket":"ros_mask", "srcPath": "coco-Mask_RCNN", "bin":"ros_mask.py", "args":"", "loglevel":"info"},
+      {"name":"DL_percessing", "socket":"DL_percessing", "srcPath": "coco-Mask_RCNN", "bin":"DL_percessing.py", "args":"", "loglevel":"info"},
+      {"name":"calibration", "socket":"calibration", "srcPath": "script", "bin":"inchef_calibration.py", "args":"", "loglevel":"info"},
+      {"name":"luban_bridge", "socket":"luban_bridge", "srcPath": "", "bin":"luban_bridge.py", "args":"", "loglevel":"info"}
+    ],
+    "actuator":[
+      {"name":"ag_perception", "socket":"ag_perception", "srcPath": "", "bin":"ag_perception.py", "args":"", "loglevel":"info"}
+    ]
+  }
+]

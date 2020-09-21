@@ -1,0 +1,20 @@
+[Unit]
+Description=Luban System Service
+After=ota.service
+
+[Service]
+Type=forking
+ExecStart=/opt/knowin/algorithms.sh start
+ExecStop=/opt/knowin/algorithms.sh stop
+StandardOutput=tty
+
+[Install]
+WantedBy=multi-user.target
+
+#How to setup selfstart service on an new system
+##0. sudo cp algorithms.sh /opt/knowin
+##1. sudo cp algorithms.service /etc/systemd/system
+##2. sudo systemctl daemon-reload
+##3. sudo systemctl enable algorithms.service
+##4. then you can see there is a "algorithms.service" softlink
+#### under /etc/systemd/system/multi-user.target.wants

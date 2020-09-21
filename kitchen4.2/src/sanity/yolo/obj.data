@@ -1,0 +1,6 @@
+classes=8
+train=./src/kitchen4.2/src/sanity/yolo/train.txt
+valid=./src/kitchen4.2/src/sanity/yolo/val.txt
+#names=./../../src/kitchen3.0/src/sanity/yolo/obj.names
+names=./src/kitchen4.2/src/sanity/yolo/obj.names
+backup=backup/

@@ -1,0 +1,20 @@
+
+---
+CameraCheckRationalROI: 
+  top: 255
+  left: 335
+  bottom: 441
+  right: 670
+ObjReadinessNum: 6
+ObjReadinessRegion: 
+  beef_0: [182,69,293,188]
+  strainer_1: [323,63,433,184]
+  pan_2: [137,210,341,386]
+  souppot_3: [161,433,321,560]
+  plate_4: [131,612,264,756]
+  plate_5: [270,623,431,794]
+ForeignObjRegion:
+  top: 342
+  left: 351
+  bottom: 435
+  right: 497

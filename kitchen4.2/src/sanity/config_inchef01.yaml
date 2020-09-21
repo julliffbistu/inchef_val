@@ -1,0 +1,21 @@
+
+---
+CameraCheckRationalROI: 
+  top: 196
+  left: 278
+  bottom: 415
+  right: 661
+ObjReadinessNum: 7
+ObjReadinessRegion: 
+  beef_0: [219,104,297,200]
+  broccoli_1: [406,83,516,195]
+  pan_2: [199,291,441,444]
+  souppot_3: [233,506,415,619]
+  plate_4: [198,678,341,851]
+  plate_5: [335,688,506,887]
+  butterbowl_6: [380,206,462,306]
+ForeignObjRegion:
+  top: 395
+  left: 301
+  bottom: 525
+  right: 640
