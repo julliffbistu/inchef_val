@@ -17,7 +17,7 @@ def listener():
     rospy.Subscriber("/process_uv/listbroc",broclist,callback_broc,queue_size=10)
     rospy.spin()
 
-f = codecs.open("predict_uv.txt",'w','utf-8')
+f = codecs.open("predict_beef_uv.txt",'w','utf-8')
 number = 1
 def callback_masrcnn(data):
     global number

@@ -9,11 +9,11 @@ import codecs
 import numpy as np
 import math
 
-dis_thread = 20 #pixel
+dis_thread = 35 #pixel
 detect_count = 0
 
-GT = codecs.open('grondtruth_uv.txt', mode='r', encoding='utf-8')  # 打开txt文件，以‘utf-8’编码读取
-PR = codecs.open('predict_uv.txt', mode='r', encoding='utf-8')  # 打开txt文件，以‘utf-8’编码读取
+GT = codecs.open('grondtruth_beef_uv.txt', mode='r', encoding='utf-8')  # 打开txt文件，以‘utf-8’编码读取
+PR = codecs.open('predict_beef_uv.txt', mode='r', encoding='utf-8')  # 打开txt文件，以‘utf-8’编码读取
 line_GT = GT.readline()   # 以行的形式进行读取文件
 line_PR = PR.readline()   # 以行的形式进行读取文件
 
@@ -51,12 +51,15 @@ if len(list_GT_u) == len(list_PR_u):
         dis_temp = math.pow((int(list_PR_u[i])-int(list_GT_u[i])),2) + math.pow((int(list_PR_v[i])-int(list_GT_v[i])),2)
         if dis_temp < math.pow(dis_thread,2):
             detect_count = detect_count + 1
+        else:
+            print("dectection error point is: %d.jpg" %i)
+            print("dectection error point is:",[int(list_PR_u[i]),int(list_PR_v[i])], [int(list_GT_u[i]),int(list_GT_v[i])])
 
     percent = detect_count*1.0/len(list_GT_u)*100.0
 
     print("dectection right count is:",detect_count)
     print("dectection image count is:",len(list_GT_u))
-    print("dectection rate is: %.2f%%" %percent)
+    print("dectection rate is: %.4f%%" %percent)
     print("finished caculatinon! ")
 else:
     print("error lenght is not same!")

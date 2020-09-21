@@ -9,7 +9,7 @@ import cv2
 import codecs
 import numpy as np
 
-f = codecs.open("grondtruth_uv.txt",'w','utf-8')
+f = codecs.open("grondtruth_plate1_uv.txt",'w','utf-8')
 
 #a = []
 #b = []
@@ -34,7 +34,12 @@ def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
 while 1:
     
     img = cv2.imread('./test_datasets/' + str(i) + '.jpg')
-    
+    if img is None:
+        f.close()
+        print("data is finished!")
+        cv2.destroyAllWindows()
+        break
+
     cv2.namedWindow("image")
     cv2.setMouseCallback("image", on_EVENT_LBUTTONDOWN)
     cv2.imshow("image", img)
@@ -47,4 +52,5 @@ while 1:
     
     if cv2.waitKey(0) & 0xFF == ord('q'):      
         f.close()
+        cv2.destroyAllWindows()
         break
